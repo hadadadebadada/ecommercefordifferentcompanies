@@ -1,0 +1,74 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+
+<h2>brutale market list</h2>
+
+
+<section class="text-center mb-4">
+
+    <!--Grid row-->
+    <div class="row wow fadeIn">
+        {% for market in markets %}
+
+      <!--Grid column-->
+      <div class="col-lg-3 col-md-6 mb-4">
+
+        <!--Card-->
+        <div class="card">
+          <a href="{{ market.get_absolute_url }}">
+
+          <!--Card image-->
+          <div class="view overlay">
+
+            <img src="{{ market.image.url }}" class="card-img-top" alt="">
+            <a href="{{ market.get_absolute_url }}">
+
+              <div class="mask rgba-white-slight"></div>
+            </a>
+          </div>
+          <!--Card image-->
+
+          <!--Card content-->
+          <div class="card-body text-center">
+            <!--Category & Title-->
+            <a href="" class="grey-text">
+              <!-- <h5>Shirt</h5> -->
+            </a>
+            <h5>
+              <strong>
+                <a href="" class="dark-grey-text">{{market.market}}
+                  <span class="badge badge-pill danger-color">NEW</span>
+                </a>
+              </strong>
+            </h5>
+
+            <h4 class="font-weight-bold blue-text">
+              <strong>{{market.get_branch_display}}</strong>
+            </h4>
+
+          </div>
+          <!--Card content-->
+
+        </div>
+        <!--Card-->
+
+      </div>
+      <!--Grid column-->
+
+
+
+     
+      {% endfor %}
+
+    </div>
+    <!--Grid row-->
+
+   
+
+  </section>
+  <!--Section: Products v.3-->
+
+
+{%endblock content%}
